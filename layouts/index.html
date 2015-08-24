@@ -21,6 +21,13 @@
 		  	{{ end }}
 		    </span>
 		  {{ end }}
+		  {{ if .Params.categories }}
+                    <p> Posted in
+			{{ range .Params.categories }}
+				  <a href="/categories/{{ . | urlize }}">{{ . }}</a>&nbsp;
+			{{ end }}
+                    </p>
+		  {{ end }}
 		  {{ if .Site.Params.Summary }}
 		  	<div class="summary">
 				{{ .Summary }}
